@@ -18,7 +18,7 @@ with open("zillow_key.txt", 'r') as f:
 df = pd.read_excel("HO Data 6-12 claims 2017.xlsx")
 
 #Need to Index Data through Zillow and add to DataFrame, this works for a single value
-for x in range(0, 1):  #replace number with df.shape[0] for full ist
+for x in range(0, df.shape[0]):  #replace number with df.shape[0] for full ist
     try:
         address = df.iloc[x,7] #+ ", " + df.iloc[x,8] + ", " + df.iloc[x,9] Commented out City and State
         postal_code = np.int(df.iloc[x,11]) #numbers come out as float64 and need to be converted for Zillow's API
